@@ -17,7 +17,7 @@ endereco = dados_empresa[
         ]
 #Filtro de capital
 capital = endereco[
-    (dados_empresa["capital_social"] > 5000)
+    (dados_empresa["capital_social"] > 5000 )
 ]
 
 
@@ -39,3 +39,12 @@ plt.ylabel("quantidade")
 plt.xlabel("bairro")
 plt.title("quantidade de empresas por bairros")
 plt.show()
+
+#################################################
+#### analise extra
+################################################
+#fazer um filtro nas empresas com a maior capital social
+#pode viabilizar o filtro de melhores clientes
+
+decrescente =dados_empresa.sort_values(by=["capital_social"],ascending=False)
+decrescente.to_csv("FiltroPorValorCapital.csv")
